@@ -20,9 +20,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/calculaJuros", async (float valorinicial, int meses) =>
+app.MapGet("/calculaJuros", async (HttpContext context, float valorinicial, int meses) =>
 {
-    var _mathService = new MathService();
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "*"); //habilitar CORS para testes de integração
+
+    var _mathService = new MathService(); 
     var _httpClient = new HttpClient();
     var response = await _httpClient.GetStringAsync("https://localhost:8001/taxajuros");
     var juros = float.Parse(response, CultureInfo.InvariantCulture);;

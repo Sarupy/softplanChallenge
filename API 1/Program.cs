@@ -16,8 +16,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/taxaJuros", () =>
+app.MapGet("/taxaJuros", (HttpContext context) =>
 {
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "*"); //habilitar CORS para testes de integração
+
     return 0.01;
 })
 .WithName("taxaJuros");
