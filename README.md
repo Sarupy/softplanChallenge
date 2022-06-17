@@ -1,7 +1,9 @@
 # Softplan Challenge
 Teste técnico da Softplan.
 
-Esse teste técnico consistiu em **duas APIs**, chamadas aqui de __API 1__ e __API 2__.
+Esse teste técnico consistiu em  construir **duas APIs**, que são chamadas aqui de **API 1** e **API 2**.
+
+O Projeto está na versão **.Net Core 6.0** e utiliza o mais novo recurso da Microsoft, **Minimal APIs**, que permite a criação de APIs rápidas e com poucas linhas de código.
 
 A **API 1**, possui apenas um endpoint, chamado de <em>taxasJuros</em>, que retorna sempre um único valor (0.01), apenas para consumo da outra API.
 
